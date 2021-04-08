@@ -8,7 +8,7 @@ export default function Landing() {
           <h1 class='x-large'>Developer Connector</h1>
           <p class='lead'>
             Create a developer profile/portfolio, share posts and get help from
-            other developers
+            other developers this is fanstastic
           </p>
           <div class='buttons'>
             <a href='register.html' class='btn btn-primary'>

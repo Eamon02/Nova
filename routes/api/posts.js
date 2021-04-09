@@ -110,7 +110,13 @@ router.put('/like/:id', auth, checkObjectId('id'), async (req, res) => {
       return res.status(400).json({ msg: 'Post already liked' });
     }
 
+    //ADD LIKE
     post.likes.unshift({ user: req.user.id });
+
+    //Remove Dislike
+    post.dislikes = post.likes.filter(
+      ({ user }) => user.toString() !== req.user.id
+    );
 
     await post.save();
 
@@ -143,6 +149,65 @@ router.put('/unlike/:id', auth, checkObjectId('id'), async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+// DISLIKE DISLIKE DISLIKE DISLIKE DISLIKE DISLIKE DISLIKE DISLIKE
+
+// @route    PUT api/posts/like/:id
+// @desc     Dislike post
+// @access   Private
+router.put('/dislike/:id', auth, checkObjectId('id'), async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    // Check if the post has already been disliked
+    if (
+      post.dislikes.some((dislike) => dislike.user.toString() === req.user.id)
+    ) {
+      return res.status(400).json({ msg: 'Post already disliked' });
+    }
+
+    //ADD Dislike
+    post.dislikes.unshift({ user: req.user.id });
+
+    //Remove Like
+    post.likes = post.likes.filter(
+      ({ user }) => user.toString() !== req.user.id
+    );
+
+    await post.save();
+
+    return res.json(post.dislikes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+// @route    PUT api/posts/unlike/:id
+// @desc     Undislike a post
+// @access   Private
+router.put('/undislike/:id', auth, checkObjectId('id'), async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    // Check if the post has not yet been liked
+    if (
+      !post.dislikes.some((dislike) => dislike.user.toString() === req.user.id)
+    ) {
+      return res.status(400).json({ msg: 'Post has not yet been disliked' });
+    }
+    // remove the dislike
+    post.dislikes = post.likes.filter(
+      ({ user }) => user.toString() !== req.user.id
+    );
+
+    await post.save();
+
+    return res.json(post.dislikes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS COMMENTS
 
 // @route    POST api/posts/comment/:id
 // @desc     Comment on a post

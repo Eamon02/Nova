@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Landing from './components/layout/Landing';
+import Navbar from './components/layout/NavBar/Navbar';
+import Landing from './components/layout/Landing/Landing';
 import Routes from './components/routing/Routes';
 import { LOGOUT } from './actions/types';
 

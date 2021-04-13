@@ -43,14 +43,16 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   );
 
   return (
+    <>
     <nav className='navbar bg-dark'>
       <ul>
         <li>
-        <Link to='/' className='fas fa-home'></Link>
+          <Link to='/' className='fas fa-home'></Link>
         </li>
         <>{isAuthenticated ? authLinks : guestLinks}</>
       </ul>
     </nav>
+    </>
   );
 };
 

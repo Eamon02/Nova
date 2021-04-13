@@ -1,0 +1,12 @@
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  background-color: var(--dark-color);
+  margin-bottom: 0;
+}

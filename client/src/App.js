@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/NavBar/Navbar';
 import Landing from './components/layout/Landing/Landing';
+import Header from './components/layout/Header/Header';
 import Routes from './components/routing/Routes';
 import { LOGOUT } from './actions/types';
 
@@ -31,9 +32,10 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <>
+          <Header />
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route exact path='/' component={Landing} />
             <Route component={Routes} />
           </Switch>
         </>

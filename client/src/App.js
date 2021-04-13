@@ -5,6 +5,7 @@ import Landing from './components/layout/Landing/Landing';
 import Header from './components/layout/Header/Header';
 import Routes from './components/routing/Routes';
 import { LOGOUT } from './actions/types';
+import MainPage from './components/MainPage/MainPage';
 
 // Redux
 import { Provider } from 'react-redux';

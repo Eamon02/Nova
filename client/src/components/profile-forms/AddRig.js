@@ -14,6 +14,8 @@ const AddRig = ({ addRig, history }) => {
     description: '',
   });
 
+  // const { name, telescope, mount, camera, guidescope, description } = formData;
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -21,7 +23,7 @@ const AddRig = ({ addRig, history }) => {
     <>
       <h1 className='large text-primary'>Add A Rig</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Add a telescope rig and equipment
+        <i className='fas fa-code-branch' /> Add equipment to create a Rig
       </p>
       <form
         className='form'
@@ -36,7 +38,7 @@ const AddRig = ({ addRig, history }) => {
             placeholder='Name your Rig'
             name='name'
             // value={name}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -46,7 +48,7 @@ const AddRig = ({ addRig, history }) => {
             placeholder='telescope'
             name='telsecope'
             // value={telescope}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -56,7 +58,7 @@ const AddRig = ({ addRig, history }) => {
             placeholder='mount'
             name='mount'
             // value={mount}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
           />
         </div>
 
@@ -66,7 +68,7 @@ const AddRig = ({ addRig, history }) => {
             placeholder='camera'
             name='camera'
             // value={camera}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
           />
         </div>
 
@@ -76,7 +78,7 @@ const AddRig = ({ addRig, history }) => {
             placeholder='guidescope'
             name='guidescope'
             // value={guidescope}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
           />
         </div>
 
@@ -87,7 +89,7 @@ const AddRig = ({ addRig, history }) => {
             rows='5'
             placeholder='Job Description'
             // value={description}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
           />
         </div>
         <input type='submit' className='btn btn-primary my-1' />

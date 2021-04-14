@@ -96,9 +96,7 @@ export const createProfile = (formData, history, edit = false) => async (
 
     dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
-    if (!edit) {
-      history.push('/dashboard');
-    }
+    history.push('/dashboard');
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -223,7 +221,7 @@ export const deleteRig = (id) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch(setAlert('Rig Removed', 'success'));
+    dispatch(setAlert('Rig Removed', 'danger'));
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,

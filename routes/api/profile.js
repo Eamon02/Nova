@@ -301,6 +301,57 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
   }
 });
 
+// @route    PUT api/profile/rig
+// @desc     Add rig to profile
+// @access   Private
+router.put(
+  '/rig',
+  auth,
+  check('name', 'Name is required').notEmpty()
+    .notEmpty()
+    .custom((value, { req }) => (req.body.to ? value < req.body.to : true)),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+
+      profile.rig.unshift(req.body);
+
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
+
+// @route    DELETE api/profile/rig/:exp_id
+// @desc     Delete rig from profile
+// @access   Private
+
+router.delete('/rig/:rig_id', auth, async (req, res) => {
+  try {
+    const foundProfile = await Profile.findOne({ user: req.user.id });
+
+    // Get remove index
+    foundProfile.rig = foundProfile.rig.filter(
+      (rig) => rig._id.toString() !== req.params.rig_id
+    );
+
+    await foundProfile.save();
+    return res.status(200).json(foundProfile);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ msg: 'Server error' });
+  }
+});
+
 // @route       GET api/profile/github/:username
 // @desc        Get user repos from username
 // @acess       Public

@@ -73,7 +73,7 @@ const ProfileSchema = new Schema({
         type: String,
       },
       guidescope: {
-        type: Date,
+        type: String,
       },
       current: {
         type: Boolean,

@@ -47,7 +47,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     <nav className='navbar bg-dark'>
       <ul>
         <li>
-          <Link to='/' className='fas fa-home'></Link>
+          <Link to='/mainpage' className='fas fa-home'></Link>
         </li>
         <>{isAuthenticated ? authLinks : guestLinks}</>
       </ul>

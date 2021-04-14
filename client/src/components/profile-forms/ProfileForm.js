@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
 const initialState = {
+  photo: '',
   company: '',
   website: '',
   location: '',
@@ -46,6 +47,7 @@ const ProfileForm = ({
   }, [loading, getCurrentProfile, profile]);
 
   const {
+    photo,
     company,
     website,
     location,
@@ -77,6 +79,21 @@ const ProfileForm = ({
       <small>* = required field</small>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
+
+
+        <div className="form-group custom-file">
+          <input
+            type="file"
+            placeholder="photo"
+            name="photo"
+            value={photo}
+            onChange={onChange}
+          />
+          <small className="form-text">
+            Upload a profile photo
+          </small>
+        </div>
+
           <select name="status" value={status} onChange={onChange}>
             <option>* Select Professional Status</option>
             <option value="Developer">Developer</option>

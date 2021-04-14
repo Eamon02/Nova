@@ -5,6 +5,7 @@ const axios = require('axios');
 const { check, validationResult } = require('express-validator');
 const router = express.Router();
 require('dotenv').config();
+
 // @route   GET api/profile/me
 // @desc    Get current users profile
 // @access  Private
@@ -302,7 +303,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 
 // @route       GET api/profile/github/:username
 // @desc        Get user repos from username
-// @acess       Private
+// @acess       Public
 router.get('/github/:username', (req, res) => {
   try {
     const options = {

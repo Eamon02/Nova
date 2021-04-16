@@ -7,7 +7,7 @@ import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
-import ProfileRigs from './ProfileRigs';
+// import ProfileRigs from './ProfileRigs';
 import ProfileGithub from './ProfileGithub';
 import { getProfileById } from '../../actions/profile';
 

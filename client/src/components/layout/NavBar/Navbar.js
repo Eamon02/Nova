@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 
   return (
     <>
-      <nav className='navbar bg-dark'>
+      <nav className='navbar'>
         <ul>
           <li>
             <Link to='/mainpage' className='fas fa-home'></Link>

@@ -58,6 +58,29 @@ const ProfileSchema = new Schema({
       },
     },
   ],
+  rig: [
+    {
+      name: {
+        type: String,
+      },
+      telescope: {
+        type: String,
+      },
+      mount: {
+        type: String,
+      },
+      camera: {
+        type: String,
+      },
+      guidescope: {
+        type: String,
+      },
+      current: {
+        type: Boolean,
+        default: false,
+      },
+    },
+  ],
   education: [
     {
       school: {

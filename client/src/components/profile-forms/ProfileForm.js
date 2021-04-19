@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -69,7 +69,7 @@ const ProfileForm = ({
   };
 
   return (
-    <Fragment>
+    <>
       <h1 className="large text-primary">Edit Your Profile</h1>
       <p className="lead">
         <i className="fas fa-user" /> Add some changes to your profile
@@ -77,6 +77,8 @@ const ProfileForm = ({
       <small>* = required field</small>
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
+
+
           <select name="status" value={status} onChange={onChange}>
             <option>* Select Professional Status</option>
             <option value="Developer">Developer</option>
@@ -175,7 +177,7 @@ const ProfileForm = ({
         </div>
 
         {displaySocialInputs && (
-          <Fragment>
+          <>
             <div className="form-group social-input">
               <i className="fab fa-twitter fa-2x" />
               <input
@@ -230,7 +232,7 @@ const ProfileForm = ({
                 onChange={onChange}
               />
             </div>
-          </Fragment>
+          </>
         )}
 
         <input type="submit" className="btn btn-primary my-1" />
@@ -238,7 +240,7 @@ const ProfileForm = ({
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </>
   );
 };
 

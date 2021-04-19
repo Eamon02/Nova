@@ -6,20 +6,34 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+<<<<<<< HEAD
     "bootstrap": "^4.6.0",
+=======
+    "body-parser": "^1.19.0",
+>>>>>>> 4c6c4c7e883bdaa97ace515d18e40dc8302cbaa1
     "config": "^3.3.6",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "express-validator": "^6.10.0",
     "gravatar": "^1.8.1",
+    "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.12.3",
+<<<<<<< HEAD
     "react-bootstrap": "^1.5.2",
+=======
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+>>>>>>> 4c6c4c7e883bdaa97ace515d18e40dc8302cbaa1
     "request": "^2.88.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "three": "^0.127.0"
   },
   "scripts": {
     "start": "node server.js",

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//Edit profile
+
 const DashboardActions = () => {
   return (
     <div className='dash-buttons'>
@@ -12,6 +14,9 @@ const DashboardActions = () => {
       </Link>
       <Link to='/add-education' className='btn btn-light'>
         <i className='fas fa-graduation-cap text-primary' /> Add Education
+      </Link>
+      <Link to='/add-rig' className='btn btn-light'>
+        <i className='fas fa-star text-primary' /> Add Rig
       </Link>
     </div>
   );

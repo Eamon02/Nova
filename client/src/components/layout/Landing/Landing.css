@@ -1,7 +1,7 @@
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('../../../img/Earth-Horizon.jpg') no-repeat center
+  background: url('../../../img/novalanding.png') no-repeat center
     center/cover;
   height: 100vh;
 }

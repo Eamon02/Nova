@@ -1,4 +1,5 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const router = express.Router();
 const gravatar = require('gravatar')
 const bcrypt = require('bcryptjs')
@@ -7,6 +8,7 @@ const config = require('config')
 require('dotenv').config();
 const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
+
 // @route   POST api/users
 // @desc    Registered User
 // @access  Public

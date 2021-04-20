@@ -1,0 +1,35 @@
+/* Header */
+.header {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem 2rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.9;
+	background-color: var(--dark-color);
+	margin-bottom: 0;
+}
+@media (min-width: 700px) {
+	.header {
+		display: none;
+	}
+}
+
+/* ul {
+  display: flex;
+}
+
+a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+span {
+  margin-right: 0.6rem;
+} */

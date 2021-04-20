@@ -52,6 +52,11 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 		<>
 			<nav className='navbar'>
 				<ul>
+					<li className='header2'>
+						<Link to='/mainpage' className='x-larg'>
+							NOVA
+						</Link>
+					</li>
 					<li>
 						<Link to='/mainpage' className='fas fa-home'></Link>
 					</li>

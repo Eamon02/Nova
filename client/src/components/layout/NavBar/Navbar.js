@@ -58,7 +58,10 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 						</Link>
 					</li>
 					<li>
-						<Link to='/mainpage' className='fas fa-home'></Link>
+						<Link to='/mainpage'>
+							<i className='fas fa-calendar' />{' '}
+							<span className='hide-sm'>Events</span>
+						</Link>
 					</li>
 					<>{isAuthenticated ? authLinks : guestLinks}</>
 				</ul>

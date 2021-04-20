@@ -200,6 +200,11 @@ img {
 .alert-danger {
 	background: var(--danger-color);
 	color: #fff;
+}
+
+.btn-danger-sm {
+	background: var(--danger-color);
+	color: #fff;
 	width: 30px;
 	height: 30px;
 }

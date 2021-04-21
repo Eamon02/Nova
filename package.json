@@ -15,6 +15,7 @@
     "express-validator": "^6.10.0",
     "gravatar": "^1.8.1",
     "gridfs-stream": "^1.1.1",
+    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.3",
@@ -28,11 +29,14 @@
     "three": "^0.127.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "server": "node server",
-    "watch": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run watch\" \"npm run client\""
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
